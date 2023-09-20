@@ -6,3 +6,17 @@
 
 @author: Savant
 """
+def task4(num_):
+    try:
+        num = int(num_)
+    except ValueError:
+        print('input should be int')
+        raise
+    if len(str(num)) != 4:
+        print('input should be 4 symbols long')
+        return
+    arr = [int(n) for n in list(str(num))]
+    return ' + '.join([str(i) for i in arr]) + f' = {sum(arr)}'
+
+myNum = input()
+print(task4(myNum))
